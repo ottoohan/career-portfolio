@@ -1,0 +1,20 @@
+flowchart TB
+  subgraph R1["1 · 진단"]
+    direction LR
+    T["티켓"] --> K["기준 한 줄<br/>기간 · 모수 · 단위 · 환경 · 형식"] --> R["재현 · 원인 진단<br/>코드 · 데이터 · 로그"]
+  end
+  subgraph R2["2 · 수정과 검증 — 차단이 나오면 수정으로 돌아간다"]
+    direction LR
+    M["수정<br/>코드는 AI 에이전트가 작성"] --> U["테스트 실행<br/>통과 출력 확보"] --> V["독립 검증 에이전트<br/>diff + 기대 결과만 전달"]
+  end
+  subgraph R3["3 · 배포와 실측 — 차단 0건일 때만"]
+    direction LR
+    P["PR"] --> Q["QA 환경 배포"] --> S["대상 환경에서 실측<br/>URL · 스크린샷"] --> H{{"사람 관문<br/>main 머지 · 운영 배포"}}
+  end
+  subgraph R4["4 · 학습 — 다음 티켓은 더 적게 교정받는다"]
+    direction LR
+    L["메모리 · 규칙 갱신"] --> X["세션 로그 측정<br/>교정 · 거부 · 스킬 호출"]
+  end
+  R1 --> R2 --> R3 --> R4
+  style H fill:#fff4d6,stroke:#d9a400
+  style V fill:#e3ecff,stroke:#4a6fd1

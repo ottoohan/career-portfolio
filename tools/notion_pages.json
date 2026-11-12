@@ -94,5 +94,53 @@
   "url": "https://app.notion.com/p/416cb53ea2768159b867d23394cc24de",
   "anchor": "416cb53e-a276-816e-b4a8-d91d37daa824",
   "title": "이력서 — 한지만"
+ },
+ "4-qa-playbook/README.md": {
+  "id": "416cb53e-a276-8111-b9f9-f1c860121a73",
+  "url": "https://app.notion.com/p/QA-416cb53ea2768111b9f9f1c860121a73",
+  "anchor": "416cb53e-a276-81e9-a32f-c62df7df90f5",
+  "title": "QA 플레이북 — 지금 쓰는 템플릿"
+ },
+ "4-qa-playbook/01-ai-qa-workflow.md": {
+  "id": "416cb53e-a276-8125-a2a2-c27dee7e760f",
+  "url": "https://app.notion.com/p/01-AI-QA-416cb53ea2768125a2a2c27dee7e760f",
+  "anchor": "416cb53e-a276-811c-8557-c27ffef0b3f6",
+  "title": "01. AI 에이전트 QA 워크플로"
+ },
+ "4-qa-playbook/02-tc-design.md": {
+  "id": "416cb53e-a276-81cb-9138-d0cb8c04d82c",
+  "url": "https://app.notion.com/p/02-TC-416cb53ea27681cb9138d0cb8c04d82c",
+  "anchor": "416cb53e-a276-81f2-ad1a-c371f80dd11d",
+  "title": "02. TC 설계"
+ },
+ "4-qa-playbook/03-defect-ticket.md": {
+  "id": "416cb53e-a276-81fe-b12f-f823ab4f8e3f",
+  "url": "https://app.notion.com/p/03-416cb53ea27681feb12ff823ab4f8e3f",
+  "anchor": "416cb53e-a276-81f7-adbb-d7051cf3dc6e",
+  "title": "03. 결함 티켓"
+ },
+ "4-qa-playbook/04-root-cause-analysis.md": {
+  "id": "416cb53e-a276-814e-befc-d626f4f0d1a3",
+  "url": "https://app.notion.com/p/04-416cb53ea276814ebefcd626f4f0d1a3",
+  "anchor": "416cb53e-a276-81b3-bb14-ee533636efdd",
+  "title": "04. 원인 분석 보고"
+ },
+ "4-qa-playbook/05-quality-metrics.md": {
+  "id": "416cb53e-a276-8134-8b81-cdcdeae204b2",
+  "url": "https://app.notion.com/p/05-416cb53ea27681348b81cdcdeae204b2",
+  "anchor": "416cb53e-a276-81ad-89d7-c79d18ed6eeb",
+  "title": "05. 품질 지표"
+ },
+ "4-qa-playbook/06-ai-output-evaluation.md": {
+  "id": "416cb53e-a276-8192-8635-c3be97dbc8d8",
+  "url": "https://app.notion.com/p/06-AI-RAG-416cb53ea27681928635c3be97dbc8d8",
+  "anchor": "416cb53e-a276-8111-af5d-cb96d7ea3e30",
+  "title": "06. AI 결과물 평가 (RAG·챗봇)"
+ },
+ "4-qa-playbook/07-release-check.md": {
+  "id": "416cb53e-a276-8112-ad28-ddace4fa7d2f",
+  "url": "https://app.notion.com/p/07-416cb53ea2768112ad28ddace4fa7d2f",
+  "anchor": "416cb53e-a276-8175-bc9c-f11daad83f70",
+  "title": "07. 배포 전후 확인"
  }
 }

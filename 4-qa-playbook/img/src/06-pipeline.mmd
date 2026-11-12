@@ -1,0 +1,12 @@
+flowchart TB
+  subgraph R1["1 · 설계와 실행"]
+    direction LR
+    G["골든셋 40문항<br/>사실 · 종합 · 답 없음 · 혼동 유도"] --> R["검색 비교<br/>단어 BM25 · 바이그램 · 오라클"] --> A["답 생성<br/>생성 모델"] --> J["채점<br/>채점 모델은 생성과 분리"]
+  end
+  subgraph R2["2 · 판정을 믿을 수 있나"]
+    direction LR
+    H["사람 판정으로 보정<br/>합격 · 불합격 일치율"] --> N["3회 반복<br/>다수결 · 흔들림"] --> W["실제 질문으로 재측정<br/>커버리지 · Recall"]
+  end
+  R1 --> R2
+  style H fill:#e3ecff,stroke:#4a6fd1
+  style W fill:#fff4d6,stroke:#d9a400

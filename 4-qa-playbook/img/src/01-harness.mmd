@@ -1,0 +1,11 @@
+flowchart TB
+  A["① 알려 주기<br/>규칙서(매 세션 자동 로드) · 메모리(사실 1개 = 파일 1개) · 스킬(반복 업무 절차)"]
+  B["② 막기<br/>훅(기계로 판정 가능 + 복구 불가만) · 조회 래퍼(키 비노출 · 쓰기 거부 · 최신성)"]
+  C["③ 확인하기<br/>독립 검증 에이전트 · 완료 정의"]
+  D["④ 재기<br/>세션 로그 지표(교정 · 거부 · 스킬 호출 · 장시간 세션)"]
+  A --> B --> C --> D
+  D -. "교정이 몰린 곳을 규칙으로 승격" .-> A
+  style A fill:#e3ecff,stroke:#4a6fd1
+  style B fill:#fde2e2,stroke:#d14a4a
+  style C fill:#dcf5e3,stroke:#2e9a55
+  style D fill:#fff4d6,stroke:#d9a400

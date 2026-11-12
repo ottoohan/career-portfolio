@@ -19,6 +19,7 @@
 | **1** | 다른 회사에 가도 이 방식대로 일할 수 있나? | [AI 에이전트 업무 환경 이식 가이드](1-ai-workflow-guide/README.md) — 규칙서·메모리·검증 에이전트·훅·측정 스크립트 템플릿 |
 | **2** | 3년 동안 무엇을 했고 어떤 성과를 냈나? | [3년 성과 흐름](2-career-flow/README.md) — FE·BE·QA·기획·데이터·AI 하네스 6개 영역, 사례 9건, [경력기술서](2-career-flow/경력기술서.md) |
 | **3** | 왜 이 사람이 필요한가? AI를 얼마나 쓰나? | [왜 이 사람이 필요한가](3-why-me/README.md) — AI 활용 5단계 중 L4·L5 근거, 측정 전후, RAG 평가 실험, 첫 90일 |
+| **4** | 현장에서 바로 쓰는 템플릿은? | [QA 플레이북](4-qa-playbook/README.md) — AI 워크플로·TC 설계·결함 티켓·원인 분석·품질 지표·AI 결과물 평가·배포 확인, 그림 11장 |
 
 ## 폴더 구조
 
@@ -37,8 +38,10 @@
 │   ├── 경력기술서.md
 │   └── cases/01~09                    문제 → 진단 → 조치 → 결과 → 원칙
 ├── 3-why-me/README.md
+├── 4-qa-playbook/                    지금 쓰는 QA 템플릿 7종 + 그림(img/, 원본 img/src/*.mmd)
 ├── 이력서.md                          한 장 요약
 ├── tools/check_sanitize.py            커밋 전 회사 정보 검사
+├── tools/render_diagrams.mjs          Mermaid → PNG
 ├── tools/sync_notion.py               Notion 사본 갱신 (페이지 매핑: tools/notion_pages.json)
 └── PRIVACY.md                         회사 정보 취급 원칙
 ```

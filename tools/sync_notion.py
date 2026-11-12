@@ -12,7 +12,7 @@
        하위 페이지 블록은 지우지 않는다(지우면 그 페이지가 휴지통으로 간다).
 레포 상대 링크는 Notion 페이지 URL로, 코드·템플릿 파일은 GitHub URL로 바꾼다.
 """
-import json, os, re, sys, urllib.request, urllib.error
+import json, os, re, sys, urllib.request, urllib.error, uuid
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
@@ -37,6 +37,12 @@ TREE = [
 ] + [
     (f"2-career-flow/cases/{p.name}", "2-career-flow/README.md", f"사례 {p.name[:2]}. " + p.read_text().split("\n")[0][2:].strip(), "🔎")
     for p in sorted((REPO / "2-career-flow/cases").glob("*.md"))
+] + [
+    # 플레이북 첫 페이지는 프로필 아래 'QA 템플릿 모음' 페이지를 그대로 쓴다(notion_pages.json에 미리 매핑)
+    ("4-qa-playbook/README.md", None, "QA 플레이북 — 지금 쓰는 템플릿", "🧰"),
+] + [
+    (f"4-qa-playbook/{p.name}", "4-qa-playbook/README.md", None, "🧩")
+    for p in sorted((REPO / "4-qa-playbook").glob("0*.md"))
 ]
 
 
@@ -48,6 +54,22 @@ def call(method, path, payload=None):
         return json.load(urllib.request.urlopen(req))
     except urllib.error.HTTPError as e:
         raise SystemExit(f"API 실패 {e.code} {path}: {e.read().decode()[:500]}")
+
+
+def upload_image(path):
+    """PNG를 Notion에 올리고 image 블록을 돌려준다."""
+    fu = call("POST", "/file_uploads", {"filename": path.name, "content_type": "image/png"})
+    b = uuid.uuid4().hex
+    body = (f'--{b}\r\nContent-Disposition: form-data; name="file"; filename="{path.name}"\r\n'
+            f"Content-Type: image/png\r\n\r\n").encode() + path.read_bytes() + f"\r\n--{b}--\r\n".encode()
+    req = urllib.request.Request(f"{API}/file_uploads/{fu['id']}/send", data=body, method="POST", headers={
+        "Authorization": "Bearer " + cred("api_key"), "Notion-Version": "2022-06-28",
+        "Content-Type": f"multipart/form-data; boundary={b}"})
+    try:
+        urllib.request.urlopen(req).read()
+    except urllib.error.HTTPError as e:
+        raise SystemExit(f"이미지 업로드 실패 {e.code} {path.name}: {e.read().decode()[:300]}")
+    return blk("image", type="file_upload", file_upload={"id": fu["id"]})
 
 
 # ---- 인라인 서식 ----
@@ -99,7 +121,7 @@ def split_row(line):
     return [x.strip() for x in line.strip().strip("|").split("|")]
 
 
-def convert(lines, resolve):
+def convert(lines, resolve, image=None):
     R = lambda s: rich(s, resolve)
     blocks, i = [], 0
     stack = []  # (indent, block) 목록 중첩용
@@ -107,6 +129,9 @@ def convert(lines, resolve):
         ln = lines[i]; s = ln.strip()
         if not s:
             stack = []; i += 1; continue
+        m = re.match(r"^!\[([^\]]*)\]\(([^)\s]+)\)$", s)
+        if m and image:
+            blocks.append(image(m.group(2))); stack = []; i += 1; continue
         if s.startswith("```"):
             lang = LANG.get(s[3:].strip().lower(), "plain text")
             buf, i = [], i + 1
@@ -184,7 +209,8 @@ def convert(lines, resolve):
 def dry():
     for path, *_ in TREE:
         lines = (REPO / path).read_text().split("\n")[1:]
-        b = convert(lines, lambda h: h)
+        b = convert(lines, lambda h: h, lambda src, base=(REPO / path).parent: (
+            blk("image", src=src) if (base / src).is_file() else sys.exit(f"이미지 없음 {path}: {src}")))
         depth = lambda x, d=1: max([d] + [depth(c, d + 1) for c in x[x["type"]].get("children", []) if x["type"] != "table"])
         types = {}
         for x in b: types[x["type"]] = types.get(x["type"], 0) + 1
@@ -253,7 +279,7 @@ def main():
         new_title = title or lines[0][2:].strip()
         if lines and lines[0].startswith("# "):
             lines = lines[1:]
-        blocks = convert(lines, resolve)
+        blocks = convert(lines, resolve, lambda src, base=base: upload_image((base / src).resolve()))
         removed = clear(info)
         if new_title != info["title"]:
             call("PATCH", f"/pages/{info['id']}", {"properties": {"title": {"title": [{"text": {"content": new_title}}]}}})

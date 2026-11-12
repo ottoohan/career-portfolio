@@ -1,0 +1,9 @@
+flowchart TB
+  T["제목 — [영역] 무엇이 → 어떻게 잘못됨<br/>원인 · 해결책은 넣지 않는다"]
+  P["## 문제<br/>1~3문장 · 재현 절차(환경 · 시각 · 경로 · 입력값)<br/>실제 결과(문구 · 수치 그대로)"]
+  E["## 기대 결과<br/>확인 가능한 문장 — X를 하면 Y가 보인다<br/>정책 판단이 필요하면 결정 필요: A / B"]
+  O["필요할 때만<br/>근거 → 원인 추정(미확인) → 확인 요청 → 참고"]
+  T --> P --> E --> O
+  style P fill:#fde2e2,stroke:#d14a4a
+  style E fill:#dcf5e3,stroke:#2e9a55
+  style O fill:#f2f2f2,stroke:#999,stroke-dasharray: 5 5
