@@ -30,7 +30,7 @@ TREE = [
     ("README.md", None, "한지만 포트폴리오 — 검증하고, 고치고, 재는 사람", "📌"),
     ("1-ai-workflow-guide/README.md", "README.md", "1. AI 에이전트 업무 환경 이식 가이드", "🧭"),
     ("2-career-flow/README.md", "README.md", "2. 3년 성과 흐름", "📈"),
-    ("3-why-me/README.md", "README.md", "3. 왜 이 사람이 필요한가", "🎯"),
+    ("3-why-me/README.md", "README.md", "3. 내가 가져가는 것", "🎯"),
     ("PRIVACY.md", "README.md", "회사 정보 취급 원칙", "🔒"),
     ("2-career-flow/경력기술서.md", "2-career-flow/README.md", None, "📄"),
     ("이력서.md", None, "이력서 — 한지만", "📄"),

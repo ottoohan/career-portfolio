@@ -52,6 +52,8 @@ def check_git(args):
             i += 2
         else:
             i += 1
+    if i < len(args) and re.search(r"[$`]", args[i]):  # git $(echo push) … — 하위 명령을 판정할 수 없으면 막는다
+        raise Deny(f"하위 명령을 확인할 수 없는 git 명령({args[i]})")
     if i >= len(args) or args[i] != "push":
         return
     rest = args[i + 1:]
@@ -74,9 +76,15 @@ def check_git(args):
         raise Deny(f"{', '.join(sorted(hit))} 직접 push 금지 — PR로 머지할 것")
 
 
+SUBST = re.compile(r"\$\(([^()]*)\)|`([^`]*)`|[<>]\(([^()]*)\)")  # $(...) · `...` · <(...) · >(...)
+
+
 def check_command(command, depth=0):
     if depth > 3:
         raise Deny("중첩이 너무 깊어 판정 불가")
+    # 명령 치환 안쪽도 실행되므로 먼저 따로 검사한다
+    for m in SUBST.finditer(command):
+        check_command(next(g for g in m.groups() if g is not None), depth + 1)
     for segment in re.split(r"&&|\|\||;|\||\n", command):
         try:
             tokens = shlex.split(segment)
@@ -94,6 +102,12 @@ def check_command(command, depth=0):
                 if k + 1 < len(tokens):
                     check_command(tokens[k + 1], depth + 1)
                 break
+            if base == "eval":  # eval "git push ..." — 인자를 다시 명령으로 읽는다
+                check_command(" ".join(tokens[j + 1:]), depth + 1)
+                break
+            if "push" in tokens[j + 1:j + 2] and ("$" in tok or "git" in tok):
+                # g=git; $g push … / ${GIT} push … 처럼 실행 파일을 판정할 수 없으면 막는다(fail-closed)
+                raise Deny(f"실행 파일을 확인할 수 없는 push 명령({tok})")
 
 
 def main():

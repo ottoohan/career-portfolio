@@ -3,7 +3,7 @@
 
 사용: python3 -I session_metrics.py <로그 폴더> <시작일 YYYY-MM-DD> [종료일] [--exclude <세션ID 앞자리>] [--show-corrections]
   로그 폴더 예: ~/.claude/projects/-Users-me-company-source/
-  기간은 세션 파일의 마지막 수정 시각 기준이다(시작일 이상, 종료일 다음날 0시 미만).
+  기간은 세션 시작 시각(KST) 기준이다(시작일 0시 이상, 종료일 다음날 0시 미만). 다시 돌려도 같은 값이 나온다.
 출력은 집계 수치만 낸다. 프롬프트 원문은 --show-corrections 를 줄 때만 앞 60자.
 
 지표 (개선 전후로 같은 스크립트·같은 옵션으로 비교한다)
@@ -24,7 +24,12 @@ from pathlib import Path
 
 # 한국어 교정 표현. 팀 말투에 맞게 고친다.
 CORRECTION = re.compile(r"(아니|왜 |틀렸|다시 해|잘못|그게 아니|확인 안|멈춰|하지 마|하지마|말고)")
-DENIED = ("doesn't want to proceed", "rejected")
+# 권한 거부: 도구 결과가 거부 문구로 시작할 때만 센다(본문 중간의 "rejected" 같은 단어는 제외)
+DENIED = re.compile(r"^(\W{0,3})(The user doesn't want to proceed|Permission .{0,40}denied|.{0,20}was rejected)", re.I)
+# 내장 슬래시 명령은 스킬 호출이 아니다
+BUILTIN = {"clear", "compact", "model", "config", "help", "exit", "resume", "login", "logout", "status", "cost",
+           "memory", "permissions", "mcp", "init", "context", "doctor", "fast", "agents", "hooks", "ide", "vim",
+           "theme", "plugin", "plugins", "add-dir", "bug", "release-notes", "export", "rewind", "usage", "statusline"}
 
 
 def parse_session(path: Path):
@@ -53,14 +58,18 @@ def parse_session(path: Path):
         for c in content if isinstance(content, list) else []:
             if not isinstance(c, dict):
                 continue
-            if c.get("type") == "tool_result" and any(d in json.dumps(c.get("content"), ensure_ascii=False) for d in DENIED):
-                s["denied"] += 1
+            if c.get("type") == "tool_result":
+                body = c.get("content")
+                body = body if isinstance(body, str) else " ".join(x.get("text", "") for x in body or [] if isinstance(x, dict))
+                if DENIED.search(body.strip()):
+                    s["denied"] += 1
             if c.get("type") == "text":
                 text = c["text"]
         if not text or "[Request interrupted" in text:
             continue
         if text.startswith("<") and any(k in text for k in ("command-name", "local-command", "system-reminder", "task-notification")):
-            s["skill_calls"] += bool(re.search(r"<command-name>", text))
+            cmd = re.search(r"<command-name>/?([\w:-]+)</command-name>", text)
+            s["skill_calls"] += bool(cmd and cmd.group(1).split(":")[-1] not in BUILTIN)
             continue
         s["user"] += 1
         if s["user"] > 1 and CORRECTION.search(text[:80]):
@@ -70,18 +79,22 @@ def parse_session(path: Path):
 
 def main():
     args = [a for a in sys.argv[1:]]
+    if len([a for a in args if not a.startswith("--")]) < 2:
+        sys.exit(__doc__)
     show = "--show-corrections" in args
     exclude = args[args.index("--exclude") + 1] if "--exclude" in args else None
     pos = [a for i, a in enumerate(args) if not a.startswith("--") and (i == 0 or args[i - 1] != "--exclude")]
     folder = Path(pos[0]).expanduser()
-    since = dt.datetime.fromisoformat(pos[1]).timestamp()
-    until = (dt.datetime.fromisoformat(pos[2]) + dt.timedelta(days=1)).timestamp() if len(pos) > 2 else float("inf")
+    kst = dt.timezone(dt.timedelta(hours=9))
+    since = dt.datetime.fromisoformat(pos[1]).replace(tzinfo=kst)
+    until = (dt.datetime.fromisoformat(pos[2]) + dt.timedelta(days=1)).replace(tzinfo=kst) if len(pos) > 2 else None
+    # 세션 시작 시각(KST) 기준으로 자른다. 파일 수정 시각은 세션을 다시 열면 바뀌어 재현이 안 된다
     files = [f for f in folder.glob("*.jsonl")
-             if since <= f.stat().st_mtime < until and not (exclude and f.name.startswith(exclude))]
+             if f.stat().st_mtime >= since.timestamp() and not (exclude and f.name.startswith(exclude))]
     sessions, tools = [], collections.Counter()
     for f in files:
         s, t = parse_session(f)
-        if s["start"]:
+        if s["start"] and since <= s["start"] and (until is None or s["start"] < until):
             sessions.append(s)
             tools += t
     if not sessions:
