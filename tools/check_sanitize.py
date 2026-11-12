@@ -20,7 +20,7 @@ SCAN_SUFFIXES = {".md", ".py", ".json", ".txt", ".template", ".sh", ".yml", ".ya
 GENERIC = [
     ("BLOCK", "이메일", r"[\w.+-]+@[\w-]+\.[\w.]+"),
     ("BLOCK", "자격증명 흔적", r"(?i)api[_-]?key\s*[=:]\s*\S|token\s*[=:]\s*\S{8,}|password\s*[=:]\s*\S|\b(?:sk|ghp|gho|xox[bp])-?[A-Za-z0-9_]{10,}"),
-    ("BLOCK", "문서·페이지 ID(9~10자리)", r"(?<![\d.])\d{9,10}(?![\d.])"),
+    ("BLOCK", "문서·페이지 ID(9~10자리)", r"(?<![0-9a-fA-F.])\d{9,10}(?![0-9a-fA-F.])"),
     ("BLOCK", "메신저 채널·사용자 ID", r"\b[CU]0[0-9A-Z]{8,}\b"),
     ("BLOCK", "DB 테이블·매퍼", r"\btb_[a-z_]+|\w+Mapper\.xml"),
     ("WARN", "티켓 키 모양", r"\b[A-Z]{2,6}-\d{2,}\b"),

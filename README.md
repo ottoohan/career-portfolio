@@ -9,6 +9,8 @@
 
 ---
 
+> Notion에서 보기: https://brawny-alloy-73a.notion.site/415cb53ea276818585eac70cfd78efb8 (이 레포와 같은 내용, `tools/sync_notion.py`로 갱신)
+
 ## 이 레포에서 볼 수 있는 것
 
 | | 질문 | 문서 |
@@ -35,6 +37,7 @@
 │   └── cases/01~09                    문제 → 진단 → 조치 → 결과 → 원칙
 ├── 3-why-me/README.md
 ├── tools/check_sanitize.py            커밋 전 회사 정보 검사
+├── tools/sync_notion.py               Notion 사본 갱신 (페이지 매핑: tools/notion_pages.json)
 └── PRIVACY.md                         회사 정보 취급 원칙
 ```
 

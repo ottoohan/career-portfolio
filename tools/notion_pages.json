@@ -1,0 +1,92 @@
+{
+ "README.md": {
+  "id": "415cb53e-a276-8185-85ea-c70cfd78efb8",
+  "url": "https://app.notion.com/p/415cb53ea276818585eac70cfd78efb8",
+  "anchor": "415cb53e-a276-81df-96b2-d61597321a5a",
+  "title": "한지만 포트폴리오 — 검증하고, 고치고, 재는 사람"
+ },
+ "1-ai-workflow-guide/README.md": {
+  "id": "415cb53e-a276-81c8-819a-d32622c090f4",
+  "url": "https://app.notion.com/p/1-AI-415cb53ea27681c8819ad32622c090f4",
+  "anchor": "415cb53e-a276-8146-b632-fc0f4b362cdd",
+  "title": "1. AI 에이전트 업무 환경 이식 가이드"
+ },
+ "2-career-flow/README.md": {
+  "id": "415cb53e-a276-819d-a68d-d2fce3ce41af",
+  "url": "https://app.notion.com/p/2-3-415cb53ea276819da68dd2fce3ce41af",
+  "anchor": "415cb53e-a276-819e-914d-d2e42c2e3313",
+  "title": "2. 3년 성과 흐름"
+ },
+ "3-why-me/README.md": {
+  "id": "415cb53e-a276-8170-a7c1-ddb0ca2cbd4e",
+  "url": "https://app.notion.com/p/3-415cb53ea2768170a7c1ddb0ca2cbd4e",
+  "anchor": "415cb53e-a276-8113-bdba-dabfa500e4b7",
+  "title": "3. 왜 이 사람이 필요한가"
+ },
+ "PRIVACY.md": {
+  "id": "415cb53e-a276-81b5-a55b-d446b53bd6e3",
+  "url": "https://app.notion.com/p/415cb53ea27681b5a55bd446b53bd6e3",
+  "anchor": "415cb53e-a276-81cc-a8b8-c00c7770c9f9",
+  "title": "회사 정보 취급 원칙"
+ },
+ "2-career-flow/경력기술서.md": {
+  "id": "415cb53e-a276-81dd-8d98-d000881f043e",
+  "url": "https://app.notion.com/p/415cb53ea27681dd8d98d000881f043e",
+  "anchor": "415cb53e-a276-8141-a7ba-e9e96175d03d",
+  "title": "경력기술서 — 한지만"
+ },
+ "2-career-flow/cases/01-backoffice-as-product.md": {
+  "id": "415cb53e-a276-8140-8e01-df4a9da0d60c",
+  "url": "https://app.notion.com/p/01-7-29-8-82-415cb53ea27681408e01df4a9da0d60c",
+  "anchor": "415cb53e-a276-81e4-91cd-d87c1a56cb41",
+  "title": "사례 01. 사내 백오피스를 프로덕트로 운영하기 — 만족도 7.29 → 8.82"
+ },
+ "2-career-flow/cases/02-measuring-escape-rate.md": {
+  "id": "415cb53e-a276-8187-9ce3-c8b63a3db328",
+  "url": "https://app.notion.com/p/02-415cb53ea27681879ce3c8b63a3db328",
+  "anchor": "415cb53e-a276-8106-ae80-f1cd42612d77",
+  "title": "사례 02. 측정 체계가 없던 곳에 품질 지표 세우기 — 미달 수치도 그대로"
+ },
+ "2-career-flow/cases/03-event-loss-before-navigation.md": {
+  "id": "415cb53e-a276-8150-88f2-cfc78f18323f",
+  "url": "https://app.notion.com/p/03-1-415cb53ea276815088f2cfc78f18323f",
+  "anchor": "415cb53e-a276-81b6-92c7-d1095a13b567",
+  "title": "사례 03. 페이지 이동 직전 분석 이벤트 유실 — \"고쳤다\"는 1차 수정을 다시 뒤집기"
+ },
+ "2-career-flow/cases/04-search-zero-results.md": {
+  "id": "415cb53e-a276-8153-bd6f-c73f32e19dfc",
+  "url": "https://app.notion.com/p/04-415cb53ea2768153bd6fc73f32e19dfc",
+  "anchor": "415cb53e-a276-8115-9c84-e40da3875893",
+  "title": "사례 04. 고객 검색이 안 된다 — 원인 두 개가 겹친 결함"
+ },
+ "2-career-flow/cases/05-silent-2000-cap.md": {
+  "id": "415cb53e-a276-81c2-9327-f11e19e9733e",
+  "url": "https://app.notion.com/p/05-2-000-415cb53ea27681c29327f11e19e9733e",
+  "anchor": "415cb53e-a276-81af-b543-c35dc25f9564",
+  "title": "사례 05. 2,000건에서 조용히 잘리는 일괄 변경"
+ },
+ "2-career-flow/cases/06-price-snapshot-recurrence.md": {
+  "id": "415cb53e-a276-81cf-89db-cf17d0a068f0",
+  "url": "https://app.notion.com/p/06-415cb53ea27681cf89dbcf17d0a068f0",
+  "anchor": "415cb53e-a276-81ee-8cd5-e75b9fef73a2",
+  "title": "사례 06. 알림 금액과 결제 금액이 다르다 — 같은 결함이 재발한 이유"
+ },
+ "2-career-flow/cases/07-fallback-masked-as-success.md": {
+  "id": "415cb53e-a276-81d3-ad52-e90e74f5ac24",
+  "url": "https://app.notion.com/p/07-TC-415cb53ea27681d3ad52e90e74f5ac24",
+  "anchor": "415cb53e-a276-8104-bdf4-e7a39f3f944b",
+  "title": "사례 07. \"발송 성공\"의 대부분이 대체 문자였다 — TC에 유형 매트릭스가 없을 때"
+ },
+ "2-career-flow/cases/08-ai-agent-qa-workflow.md": {
+  "id": "415cb53e-a276-8107-82cb-c9d1eb87cba6",
+  "url": "https://app.notion.com/p/08-AI-QA-415cb53ea276810782cbc9d1eb87cba6",
+  "anchor": "415cb53e-a276-8174-8198-ebd2792e690d",
+  "title": "사례 08. AI 코딩 에이전트로 QA 업무를 재설계하기 — 사용 로그로 개선점을 찾다"
+ },
+ "2-career-flow/cases/09-ticket-writing-principle.md": {
+  "id": "415cb53e-a276-8108-9f3c-fb7f805289a7",
+  "url": "https://app.notion.com/p/09-415cb53ea27681089f3cfb7f805289a7",
+  "anchor": "415cb53e-a276-818e-a8f3-e5c377be4bd1",
+  "title": "사례 09. 개발자가 첫 화면에서 이해하는 결함 티켓 — 피드백으로 바꾼 작성 규칙"
+ }
+}
