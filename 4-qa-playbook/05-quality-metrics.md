@@ -39,4 +39,4 @@
 - [ ] 팀 합계와 내 몫을 구분했다
 - [ ] 목표 미달도 같은 형식으로 보고했다
 
-근거 사례: [사례 02 — 측정 체계가 없던 곳에 품질 지표 세우기](../2-career-flow/cases/02-measuring-escape-rate.md) · [사례 01 — 백오피스 만족도 7.29 → 8.82](../2-career-flow/cases/01-backoffice-as-product.md)
+근거 사례: [사례 02 — 측정 체계가 없던 곳에 품질 지표 세우기](../2-career-flow/cases/02-measuring-escape-rate.md) · [사례 01 — 백오피스 만족도 7.29 → 9.4](../2-career-flow/cases/01-backoffice-as-product.md)

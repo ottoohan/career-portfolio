@@ -27,7 +27,7 @@ def cred(key):
 
 # (repo 경로, 부모 repo 경로, 제목 덮어쓰기, 아이콘)
 TREE = [
-    ("README.md", None, "한지만 포트폴리오 — 검증하고, 고치고, 재는 사람", "📌"),
+    ("README.md", None, "한지만 포트폴리오 — QA + 운영지원", "📌"),
     ("1-ai-workflow-guide/README.md", "README.md", "1. AI 에이전트 업무 환경 이식 가이드", "🧭"),
     ("2-career-flow/README.md", "README.md", "2. 3년 성과 흐름", "📈"),
     ("3-why-me/README.md", "README.md", "3. 내가 가져가는 것", "🎯"),
@@ -57,7 +57,7 @@ def call(method, path, payload=None):
             if e.code in (429, 500, 502, 503, 504) and attempt < 3:
                 time.sleep(2 ** attempt * 2); continue
             raise SystemExit(f"API 실패 {e.code} {path}: {e.read().decode()[:500]}")
-        except (TimeoutError, urllib.error.URLError) as e:
+        except (TimeoutError, urllib.error.URLError, OSError) as e:  # OSError: 짧은 시간 연결이 몰리면 Errno 49
             if attempt < 3:
                 time.sleep(2 ** attempt * 2); continue
             raise SystemExit(f"API 응답 없음 {path}: {e}")
