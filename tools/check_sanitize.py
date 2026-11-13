@@ -28,6 +28,10 @@ GENERIC = [
 ]
 
 
+# 일부러 공개하는 값(본인 연락처 등). 회사 정보는 절대 넣지 않는다
+ALLOW = {"hanjm900817@gmail.com"}
+
+
 def load_rules():
     rules = list(GENERIC)
     for raw in TERMS.read_text(encoding="utf-8").splitlines():
@@ -61,6 +65,8 @@ def main():
         for lineno, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
             for level, label, pattern in rules:
                 for m in re.finditer(pattern, line):
+                    if m.group(0) in ALLOW:
+                        continue
                     hits.append(f"{level:5} {rel}:{lineno} [{label}] '{m.group(0)}' | {line.strip()[:80]}")
                     block_count += level == "BLOCK"
         print("\n".join(hits) if hits else f"OK    {rel}")
