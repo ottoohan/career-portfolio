@@ -142,5 +142,11 @@
   "url": "https://app.notion.com/p/07-416cb53ea2768112ad28ddace4fa7d2f",
   "anchor": "416cb53e-a276-8175-bc9c-f11daad83f70",
   "title": "07. 배포 전후 확인"
+ },
+ "4-qa-playbook/08-performance-test.md": {
+  "id": "417cb53e-a276-815f-88a8-fe49f115623e",
+  "url": "https://app.notion.com/p/08-417cb53ea276815f88a8fe49f115623e",
+  "anchor": "417cb53e-a276-8130-8455-d4c5ce8e40a8",
+  "title": "08. 성능·부하 테스트"
  }
 }

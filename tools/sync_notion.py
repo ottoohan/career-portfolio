@@ -12,7 +12,7 @@
        하위 페이지 블록은 지우지 않는다(지우면 그 페이지가 휴지통으로 간다).
 레포 상대 링크는 Notion 페이지 URL로, 코드·템플릿 파일은 GitHub URL로 바꾼다.
 """
-import json, os, re, sys, urllib.request, urllib.error, uuid
+import json, os, re, sys, time, urllib.request, urllib.error, uuid
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
@@ -50,10 +50,17 @@ def call(method, path, payload=None):
     data = json.dumps(payload).encode() if payload is not None else None
     req = urllib.request.Request(API + path, data=data, method=method, headers={
         "Authorization": "Bearer " + cred("api_key"), "Notion-Version": "2022-06-28", "Content-Type": "application/json"})
-    try:
-        return json.load(urllib.request.urlopen(req))
-    except urllib.error.HTTPError as e:
-        raise SystemExit(f"API 실패 {e.code} {path}: {e.read().decode()[:500]}")
+    for attempt in range(4):  # 응답 없이 걸리거나 429·5xx면 잠깐 쉬고 다시
+        try:
+            return json.load(urllib.request.urlopen(req, timeout=60))
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 500, 502, 503, 504) and attempt < 3:
+                time.sleep(2 ** attempt * 2); continue
+            raise SystemExit(f"API 실패 {e.code} {path}: {e.read().decode()[:500]}")
+        except (TimeoutError, urllib.error.URLError) as e:
+            if attempt < 3:
+                time.sleep(2 ** attempt * 2); continue
+            raise SystemExit(f"API 응답 없음 {path}: {e}")
 
 
 def upload_image(path):
@@ -66,7 +73,7 @@ def upload_image(path):
         "Authorization": "Bearer " + cred("api_key"), "Notion-Version": "2022-06-28",
         "Content-Type": f"multipart/form-data; boundary={b}"})
     try:
-        urllib.request.urlopen(req).read()
+        urllib.request.urlopen(req, timeout=120).read()
     except urllib.error.HTTPError as e:
         raise SystemExit(f"이미지 업로드 실패 {e.code} {path.name}: {e.read().decode()[:300]}")
     return blk("image", type="file_upload", file_upload={"id": fu["id"]})
