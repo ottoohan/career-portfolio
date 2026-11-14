@@ -34,6 +34,7 @@ TREE = [
     ("PRIVACY.md", "README.md", "회사 정보 취급 원칙", "🔒"),
     ("2-career-flow/경력기술서.md", "2-career-flow/README.md", None, "📄"),
     ("이력서.md", None, "이력서 — 한지만", "📄"),
+    ("5-presentation/README.md", "README.md", "5. 발표 자료", "🎤"),
 ] + [
     (f"2-career-flow/cases/{p.name}", "2-career-flow/README.md", f"사례 {p.name[:2]}. " + p.read_text().split("\n")[0][2:].strip(), "🔎")
     for p in sorted((REPO / "2-career-flow/cases").glob("*.md"))

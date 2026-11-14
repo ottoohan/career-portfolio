@@ -15,7 +15,7 @@ from pathlib import Path
 TOOLS = Path(__file__).resolve().parent
 ROOT = TOOLS.parent
 TERMS = TOOLS / "sanitize_terms.local.txt"
-SCAN_SUFFIXES = {".md", ".py", ".json", ".txt", ".template", ".sh", ".yml", ".yaml"}
+SCAN_SUFFIXES = {".md", ".py", ".json", ".txt", ".template", ".sh", ".yml", ".yaml", ".html", ".mjs"}
 
 GENERIC = [
     ("BLOCK", "이메일", r"[\w.+-]+@[\w-]+\.[\w.]+"),
