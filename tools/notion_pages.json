@@ -166,5 +166,11 @@
   "url": "https://app.notion.com/p/11-QA-418cb53ea276811385aef77cc2b23d15",
   "anchor": "418cb53e-a276-817a-b298-eb4aac304c4e",
   "title": "사례 11. 잴 수 없는 \"살 마음\"을 관계로 쪼개기 — 관심강의 온톨로지 QA 검토"
+ },
+ "2-career-flow/cases/12-ops-inquiry-triage.md": {
+  "id": "419cb53e-a276-8164-a77b-f683aff1be2a",
+  "url": "https://app.notion.com/p/12-419cb53ea2768164a77bf683aff1be2a",
+  "anchor": "419cb53e-a276-81d1-b417-d3c3fa0332dd",
+  "title": "사례 12. 운영 문의를 판정하고 닫는다 — 같은 주에 들어온 세 건"
  }
 }
