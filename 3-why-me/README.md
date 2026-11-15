@@ -22,7 +22,7 @@
 | [2,000건 잘림](../2-career-flow/cases/05-silent-2000-cap.md) | 운영 제보 → 서버 기본 상한 진단 → 보정 방법과 검증 기준 → 경계값 TC 규칙화 | 원인·보정안까지 내 몫 완료, 근본 수정은 개발 결정으로 인계 |
 | [폴백 은폐 사고](../2-career-flow/cases/07-fallback-masked-as-success.md) | 사고 회고 → "QA도 그 경로를 TC에 넣지 않았다" 인정 → TC 설계 기준 4묶음 → 2차 QA에 적용 | 2차 QA 43건 수행 중(통과 29·실패 6·미수행 8) |
 
-**규모**: 2026년 프로덕션 레포 직접 커밋 328건(6개 레포), PRD 12건+, 본인 등록 이슈 티켓 3,316건(재직 누적), QA 챕터 검증 1,136건(3개 스쿼드 팀 합산, 2026 상반기).
+**규모**: 숫자는 [경력기술서 핵심 숫자](../2-career-flow/경력기술서.md#핵심-성과-요약) 한 곳에 모아 두었다.
 
 ### B. AI를 "질문 도구"가 아니라 "업무 시스템"으로 운영합니다
 
@@ -184,6 +184,6 @@ CRM 대상 선정에 쓰는 관심강의 점수를 팀이 "잠재구매력 온�
 
 - [`test_push_guard.py`](../1-ai-workflow-guide/templates/hooks/test_push_guard.py)로 38개 입력의 차단·통과 판정을 시연하고, 면접관이 주는 우회 입력을 그 자리에서 추가
 - [`session_metrics.py`](../1-ai-workflow-guide/templates/scripts/session_metrics.py)로 제 세션 로그 기준선을 그 자리에서 산출
-- [사례 11건](../2-career-flow/README.md#사례-상세-문제--진단--조치--결과--재사용할-원칙) 중 하나를 골라 원인 진단 과정을 화이트보드로 재현
+- [사례 12건](../2-career-flow/README.md#사례-상세-문제--진단--조치--결과--재사용할-원칙) 중 하나를 골라 원인 진단 과정을 화이트보드로 재현
 - [발표 자료](../5-presentation/README.md) 본편 15장을 15분 안에 발표하고, 장마다 원자료 출처를 답변
 - [`check_sanitize.py`](../tools/check_sanitize.py): 이 레포가 회사 정보를 빼고 올라오도록 만든 커밋 전 검사 (원칙은 [PRIVACY.md](../PRIVACY.md))

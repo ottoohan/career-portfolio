@@ -14,7 +14,7 @@
 |---|---|---|
 | 1 | 누구이고 5년 동안 무엇을 했나 | [이력서](이력서.md) · [경력기술서](2-career-flow/경력기술서.md) |
 | 2 | 운영 도구와 품질을 숫자로 관리했다 | [운영지원 결과](2-career-flow/README.md#운영지원--결과로-본-변화) · [사례 01 백오피스 개선](2-career-flow/cases/01-backoffice-as-product.md) · [사례 02 크리티컬 유출률](2-career-flow/cases/02-measuring-escape-rate.md) |
-| 3 | 원인을 끝까지 찾는다 — 직접 수정 1건(04), 원인 재현·수정안 인계 3건(03·05·06), 사고를 TC 기준으로(07), 티켓 규칙(09) | [사례 03](2-career-flow/cases/03-event-loss-before-navigation.md) · [04](2-career-flow/cases/04-search-zero-results.md) · [05](2-career-flow/cases/05-silent-2000-cap.md) · [07](2-career-flow/cases/07-fallback-masked-as-success.md) · [09](2-career-flow/cases/09-ticket-writing-principle.md) |
+| 3 | 원인을 끝까지 찾는다 — 운영 문의 판정(12), 직접 수정 1건(04), 원인 재현·수정안 인계 3건(03·05·06), 사고를 TC 기준으로(07), 티켓 규칙(09) | [사례 12](2-career-flow/cases/12-ops-inquiry-triage.md) · [03](2-career-flow/cases/03-event-loss-before-navigation.md) · [04](2-career-flow/cases/04-search-zero-results.md) · [05](2-career-flow/cases/05-silent-2000-cap.md) · [07](2-career-flow/cases/07-fallback-masked-as-success.md) · [09](2-career-flow/cases/09-ticket-writing-principle.md) |
 | 4 | AI를 규칙·검증·측정이 있는 업무 시스템으로 돌린다 | [사례 08](2-career-flow/cases/08-ai-agent-qa-workflow.md) · [이식 가이드](1-ai-workflow-guide/README.md) |
 | 5 | AI가 만든 결과가 맞는지 잰다 | [사례 10 RAG 평가](2-career-flow/cases/10-rag-evaluation.md) · [사례 11 온톨로지 검토](2-career-flow/cases/11-ontology-review.md) · [내가 가져가는 것 5절](3-why-me/README.md#5-ai-결과물을-재는-법) |
 | 6 | 숫자를 다루는 원칙과 합류 후 90일 | [내가 가져가는 것](3-why-me/README.md) |
@@ -31,7 +31,7 @@
 |---|---|---|
 | **0** | 한 장으로 보면? | [이력서](이력서.md) — 경력 5년 요약, 핵심 역량, 회사별 주요 업무 |
 | **1** | 다른 회사에 가도 이 방식대로 일할 수 있나? | [AI 에이전트 업무 환경 이식 가이드](1-ai-workflow-guide/README.md) — 규칙서·메모리·검증 에이전트·훅·측정 스크립트 템플릿 |
-| **2** | 최근 3년 무엇을 했고 어떤 성과를 냈나? | [3년 성과 흐름](2-career-flow/README.md) — FE·BE·QA·기획·데이터·AI 하네스 6개 영역, 사례 11건, [경력기술서](2-career-flow/경력기술서.md) |
+| **2** | 최근 3년 무엇을 했고 어떤 성과를 냈나? | [3년 성과 흐름](2-career-flow/README.md) — FE·BE·QA·기획·데이터·AI 하네스 6개 영역, 사례 12건, [경력기술서](2-career-flow/경력기술서.md) |
 | **3** | 왜 필요한가? AI를 얼마나 쓰나? | [내가 가져가는 것](3-why-me/README.md) — AI 활용 5단계 중 L4·L5 근거, 측정 전후, AI 결과물을 재는 법(프레임워크 QA 트랙·RAG 평가·온톨로지 검토), 첫 90일 |
 | **4** | 현장에서 바로 쓰는 템플릿은? | [QA 플레이북](4-qa-playbook/README.md) — AI 워크플로·TC 설계·결함 티켓·원인 분석·품질 지표·AI 결과물 평가·배포 확인·성능 테스트 8종, 채운 예시·쓰지 않을 때 포함 |
 | **5** | 15분 발표로 보면? | [발표 자료](5-presentation/README.md) — 본편 15장 + 부록 슬라이드(이미지)와 바로 넘겨 보는 HTML, 장별 근거 문서 |
@@ -51,7 +51,7 @@
 ├── 2-career-flow/
 │   ├── README.md                      3년 흐름 + 영역별 성과
 │   ├── 경력기술서.md
-│   └── cases/01~11                    문제 → 진단 → 조치 → 결과 → 원칙
+│   └── cases/01~12                    문제 → 진단 → 조치 → 결과 → 원칙
 ├── 3-why-me/README.md
 ├── 4-qa-playbook/                    지금 쓰는 QA 템플릿 8종 + 그림(img/, 원본 img/src/*.mmd)
 ├── 5-presentation/                   발표 자료: portfolio-deck.html + 슬라이드 이미지(img/)
@@ -66,5 +66,6 @@
 ## 읽는 법
 
 - 숫자의 정본은 [경력기술서 핵심 숫자 표](2-career-flow/경력기술서.md)다. 다른 문서는 요약이고, `tools/check_numbers.py`가 커밋 전에 불일치를 막는다.
+- 용어: **하네스** = AI 에이전트에 붙인 규칙·기억·검증·안전장치 묶음 · **KR** = 분기 핵심 결과 목표 · **L4/L5** = AI 활용 5단계 중 구조화·측정 단계([정의](3-why-me/README.md#b-ai를-질문-도구가-아니라-업무-시스템으로-운영합니다)) · **가드** = 운영자가 실수로 잘못 저장하지 못하게 막는 화면·서버 검사 · **핫픽스** = 운영 배포 뒤 결함 때문에 급히 다시 배포한 것 · **오라클** = RAG 실험에서 정답 문서를 직접 넣어 준 조건(상한선)
 - **[실측]** 원자료가 있는 값 · **[동료 측정]** 내가 관리했지만 측정은 동료가 한 값 · **[검증 중]** 기준을 못 넘어 인용을 보류한 값
 - 이 레포에는 전 직장의 코드·문서·데이터·화면이 없다. 모든 글은 경험을 새로 서술한 것이다. → [PRIVACY.md](PRIVACY.md)
