@@ -185,5 +185,5 @@ CRM 대상 선정에 쓰는 관심강의 점수를 팀이 "잠재구매력 온�
 - [`test_push_guard.py`](../1-ai-workflow-guide/templates/hooks/test_push_guard.py)로 38개 입력의 차단·통과 판정을 시연하고, 면접관이 주는 우회 입력을 그 자리에서 추가
 - [`session_metrics.py`](../1-ai-workflow-guide/templates/scripts/session_metrics.py)로 제 세션 로그 기준선을 그 자리에서 산출
 - [사례 11건](../2-career-flow/README.md#사례-상세-문제--진단--조치--결과--재사용할-원칙) 중 하나를 골라 원인 진단 과정을 화이트보드로 재현
-- [발표 자료](../5-presentation/README.md) 16장을 15분 안에 발표하고, 장마다 원자료 출처를 답변
+- [발표 자료](../5-presentation/README.md) 본편 15장을 15분 안에 발표하고, 장마다 원자료 출처를 답변
 - [`check_sanitize.py`](../tools/check_sanitize.py): 이 레포가 회사 정보를 빼고 올라오도록 만든 커밋 전 검사 (원칙은 [PRIVACY.md](../PRIVACY.md))

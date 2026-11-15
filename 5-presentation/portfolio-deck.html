@@ -294,36 +294,7 @@ table.tbl th{font-weight:700}
 <div class="card compact hl"><h3 class="ctitle">AI 채점자도 검증한다</h3><p class="ctext">사람 판정 25건과 일치 0.58 → 0.83(불합격 0.92). 기준 85% 미달이라 “검증 중”</p></div>
 </div>
 </div>
-<aside>개발본부 RAG 연구 스터디에서 4부 “RAG 평가”를 맡았고, 발표 전에 직접 실험했습니다. 사내 위키로 질문 40개짜리 시험지를 만들고, 검색 방식을 바꿔 가며 같은 질문을 세 번씩 돌렸습니다. 정답 문서를 직접 넣어 주면 40개 중 36개를 맞혔지만, 검색을 거치면 22~25개였습니다. 고칠 곳이 답을 만드는 모델이 아니라 찾는 쪽이라는 뜻입니다. 실제 지원 채널 질문으로 바꾸니 위키에 답이 있는 질문이 21%뿐이어서, 검색을 튜닝하기 전에 문서부터 채워야 한다고 결론 냈습니다. AI 채점자는 사람 판정과 맞춰 0.83까지 올렸지만, 같은 표본으로 다듬은 값이라 새 표본으로 다시 재기 전까지는 검증 중으로 둡니다. 청중이 개발·기획·QA가 섞인 12명이라 본편은 쉬운 말로 쓰고 깊은 내용은 별도 교재로 뺐습니다.</aside>
-</section>
-<section id="ontology">
-<div class="head">
-<p class="eyebrow">온톨로지 · 관심강의 잠재구매력</p>
-<h2 class="title">잴 수 없는 “살 마음”을 잴 수 있는 관계로 쪼갰다</h2>
-</div>
-<div class="ograph">
-<div class="chips">
-<p class="glabel">행동 신호</p>
-<p class="chip">이전 단계 강의 수강</p>
-<p class="chip">커리큘럼·상세페이지 조회</p>
-<p class="chip">오픈 알림·대기 신청</p>
-<p class="chip">찜·공유·상담 문의</p>
-<p class="chip neg">이미 산 강의는 0점</p>
-</div>
-<x-shape kind="arrow-right" class="arrow"></x-shape>
-<div class="stack" style="gap:16px;">
-<p class="glabel">구성요소 6개</p>
-<div class="card compact"><h3 class="ctitle">강도</h3><p class="ctext">관심 강도 · 결정 근접도 · 확신 · 지불 의향</p></div>
-<div class="card compact"><h3 class="ctitle">조건</h3><p class="ctext">지금 들을 차례인가 · 살 수 있는 시점인가</p></div>
-</div>
-<x-shape kind="arrow-right" class="arrow"></x-shape>
-<div class="kpi"><p class="kpititle">잠재구매력</p><p class="kpisub">유저 × 강의 점수</p></div>
-</div>
-<div class="cols3" style="grid-template-columns:1fr 1fr;">
-<div class="card compact"><h3 class="ctitle">관계와 근거를 명시</h3><p class="ctext">신호는 “높인다 · 낮춘다 · 조건이다” 3종으로만 연결하고, 근거는 실측 → 관찰 → 가설 순으로 가중</p></div>
-<div class="card compact hl"><h3 class="ctitle">QA로 검토한 것</h3><p class="ctext">기준 시점 뒤 데이터가 섞인 세그먼트(누수)는 성과 인용 보류, 예측은 단일값 대신 구간으로. 직관과 반대인 실측은 지표 판독 함정으로 정리</p></div>
-</div>
-<aside>마지막은 CRM 타겟팅에 쓰는 관심강의 온톨로지입니다. 유저가 어떤 강의를 살 마음이 얼마나 있는지는 직접 잴 수 없어서, 관심 강도나 결정 근접도 같은 구성요소 여섯 개로 쪼개고, 행동 신호를 높인다·낮춘다·조건이다 세 가지 관계로만 연결했습니다. 근거가 실측인지, 관찰인지, 가설인지도 관계마다 적어서 가중치를 다르게 줍니다. 저는 이 구조를 QA 관점에서 검토했습니다. 기준 시점 이후에 가입한 사람이 섞여 구매율이 부풀려진 세그먼트는 정의를 확인하기 전까지 성과로 쓰지 않게 했고, 판매 예측은 하나의 숫자가 아니라 구간으로만 쓰게 했습니다. 지식을 개체와 관계로 구조화하는 이 방식은 RAG 검색에서도 같은 방향이라, 앞의 평가 방식과 이어집니다.</aside>
+<aside>개발본부 RAG 연구 스터디에서 4부 “RAG 평가”를 맡았고, 발표 전에 직접 실험했습니다. 사내 위키로 질문 40개짜리 시험지를 만들고, 검색 방식을 바꿔 가며 같은 질문을 세 번씩 돌렸습니다. 정답 문서를 직접 넣어 주면 40개 중 36개를 맞혔지만, 검색을 거치면 22~25개였습니다. 고칠 곳이 답을 만드는 모델이 아니라 찾는 쪽이라는 뜻입니다. 실제 지원 채널 질문으로 바꾸니 위키에 답이 있는 질문이 21%뿐이어서, 검색을 튜닝하기 전에 문서부터 채워야 한다고 결론 냈습니다. AI 채점자는 사람 판정과 맞춰 0.83까지 올렸지만, 같은 표본으로 다듬은 값이라 새 표본으로 다시 재기 전까지는 검증 중으로 둡니다. 청중이 개발·기획·QA가 섞인 12명이라 본편은 쉬운 말로 쓰고 깊은 내용은 별도 교재로 뺐습니다. 추천 점수 모델을 검토한 경험은 부록에 있습니다.</aside>
 </section>
 <section id="principles" class="accent">
 <div class="head">
@@ -364,6 +335,35 @@ table.tbl th{font-weight:700}
 </div>
 <p class="sm">바로 보여드릴 수 있는 것: push 차단 훅 38개 입력 시연 · 세션 로그 기준선 산출 · 사례 11건 중 하나를 화이트보드로 재현</p>
 <aside>들어주셔서 감사합니다. 포트폴리오 레포에 사례 11건과 템플릿이 모두 있습니다. 궁금한 사례를 하나 골라 주시면 원인을 어떻게 좁혀 갔는지 그 자리에서 다시 보여드리겠습니다.</aside>
+</section>
+<section id="ontology">
+<div class="head">
+<p class="eyebrow">부록 · 온톨로지 · 관심강의 잠재구매력</p>
+<h2 class="title">잴 수 없는 “살 마음”을 잴 수 있는 관계로 쪼갰다</h2>
+</div>
+<div class="ograph">
+<div class="chips">
+<p class="glabel">행동 신호</p>
+<p class="chip">이전 단계 강의 수강</p>
+<p class="chip">커리큘럼·상세페이지 조회</p>
+<p class="chip">오픈 알림·대기 신청</p>
+<p class="chip">찜·공유·상담 문의</p>
+<p class="chip neg">이미 산 강의는 0점</p>
+</div>
+<x-shape kind="arrow-right" class="arrow"></x-shape>
+<div class="stack" style="gap:16px;">
+<p class="glabel">구성요소 6개</p>
+<div class="card compact"><h3 class="ctitle">강도</h3><p class="ctext">관심 강도 · 결정 근접도 · 확신 · 지불 의향</p></div>
+<div class="card compact"><h3 class="ctitle">조건</h3><p class="ctext">지금 들을 차례인가 · 살 수 있는 시점인가</p></div>
+</div>
+<x-shape kind="arrow-right" class="arrow"></x-shape>
+<div class="kpi"><p class="kpititle">잠재구매력</p><p class="kpisub">유저 × 강의 점수</p></div>
+</div>
+<div class="cols3" style="grid-template-columns:1fr 1fr;">
+<div class="card compact"><h3 class="ctitle">관계와 근거를 명시</h3><p class="ctext">신호는 “높인다 · 낮춘다 · 조건이다” 3종으로만 연결하고, 근거는 실측 → 관찰 → 가설 순으로 가중</p></div>
+<div class="card compact hl"><h3 class="ctitle">QA로 검토한 것</h3><p class="ctext">기준 시점 뒤 데이터가 섞인 세그먼트(누수)는 성과 인용 보류, 예측은 단일값 대신 구간으로. 직관과 반대인 실측은 지표 판독 함정으로 정리</p></div>
+</div>
+<aside>부록입니다. 데이터 모델 검토 경험을 물으시면 보여 드립니다. CRM 타겟팅에 쓰는 관심강의 온톨로지입니다. 유저가 어떤 강의를 살 마음이 얼마나 있는지는 직접 잴 수 없어서, 관심 강도나 결정 근접도 같은 구성요소 여섯 개로 쪼개고, 행동 신호를 높인다·낮춘다·조건이다 세 가지 관계로만 연결했습니다. 근거가 실측인지, 관찰인지, 가설인지도 관계마다 적어서 가중치를 다르게 줍니다. 저는 이 구조를 QA 관점에서 검토했습니다. 기준 시점 이후에 가입한 사람이 섞여 구매율이 부풀려진 세그먼트는 정의를 확인하기 전까지 성과로 쓰지 않게 했고, 판매 예측은 하나의 숫자가 아니라 구간으로만 쓰게 했습니다. 지식을 개체와 관계로 구조화하는 이 방식은 RAG 검색에서도 같은 방향이라, 앞의 평가 방식과 이어집니다.</aside>
 </section>
 </div>
 <div id="hud"></div><div id="notes"></div>
