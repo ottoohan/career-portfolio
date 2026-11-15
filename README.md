@@ -4,16 +4,16 @@
 > 결함을 찾는 데서 끝내지 않고 **원인을 코드에서 찾아 직접 고치고, 운영 지표로 다시 잽니다.**
 > 마지막 해에는 AI 에이전트 위에 규칙·검증·측정 구조를 세워, 원인 진단부터 수정·배포 확인·재발 방지까지 한 흐름으로 돌렸고, AI가 만든 결과(TC 생성·RAG 답변·추천 점수)가 맞는지 재는 일도 맡았습니다.
 
-| 백오피스 만족도 | 결제 전수 TC | 프로덕션 직접 커밋 | 결함 유출률 | AI 하네스 |
+| 운영 실수로 인한 지원 요청 | 결제 전수 TC | 프로덕션 직접 커밋 | 결함 유출률 | AI 하네스 |
 |---|---|---|---|---|
-| **8.23 → 9.33** (10점, 월간 6회 · 최종 15명 응답) · KR 오너 | **290건** · 과거 결함 101건 역매핑 | **328건** · 6개 레포 | **3.40%** · 핫픽스 7 ÷ 배포 206, 목표 2% 미달 | 독립 검증 에이전트로 변경 13건 검증 · 머지 전 차단 2건 |
+| **13.9% → 9.7%** · 지원 요청 건수도 전년 대비 −35.6% (어드민 가드 + 운영 안내) | **290건** · 과거 결함 101건 역매핑 | **328건** · 6개 레포 | **3.40%** · 운영 배포 206번 중 7번이 크리티컬 결함 긴급 수정 (목표 2% 이하, 미달) | 독립 검증 에이전트로 변경 13건 검증 · 머지 전 차단 2건 |
 
 ## 한 번에 보는 흐름 — 발표와 같은 6단
 
 | 단계 | 하는 말 | 근거 문서 |
 |---|---|---|
 | 1 | 누구이고 5년 동안 무엇을 했나 | [이력서](이력서.md) · [경력기술서](2-career-flow/경력기술서.md) |
-| 2 | 운영 도구와 품질을 숫자로 관리했다 | [사례 01 백오피스 만족도](2-career-flow/cases/01-backoffice-as-product.md) · [사례 02 결함 유출률](2-career-flow/cases/02-measuring-escape-rate.md) |
+| 2 | 운영 도구와 품질을 숫자로 관리했다 | [운영지원 결과](2-career-flow/README.md#운영지원--결과로-본-변화) · [사례 01 백오피스 개선](2-career-flow/cases/01-backoffice-as-product.md) · [사례 02 결함 유출률](2-career-flow/cases/02-measuring-escape-rate.md) |
 | 3 | 원인을 찾아 직접 고치고, 운영 문의를 닫는다 | [사례 03](2-career-flow/cases/03-event-loss-before-navigation.md) · [04](2-career-flow/cases/04-search-zero-results.md) · [05](2-career-flow/cases/05-silent-2000-cap.md) · [07](2-career-flow/cases/07-fallback-masked-as-success.md) · [09](2-career-flow/cases/09-ticket-writing-principle.md) |
 | 4 | AI를 규칙·검증·측정이 있는 업무 시스템으로 돌린다 | [사례 08](2-career-flow/cases/08-ai-agent-qa-workflow.md) · [이식 가이드](1-ai-workflow-guide/README.md) |
 | 5 | AI가 만든 결과가 맞는지 잰다 | [사례 10 RAG 평가](2-career-flow/cases/10-rag-evaluation.md) · [사례 11 온톨로지 검토](2-career-flow/cases/11-ontology-review.md) · [내가 가져가는 것 5절](3-why-me/README.md#5-ai-결과물을-재는-법) |
@@ -57,6 +57,7 @@
 ├── 5-presentation/                   발표 자료: portfolio-deck.html + 슬라이드 이미지(img/)
 ├── 이력서.md                          한 장 요약
 ├── tools/check_sanitize.py            커밋 전 회사 정보 검사
+├── tools/check_numbers.py             대표 숫자가 문서마다 같은지 검사(정본: 경력기술서 핵심 숫자 표)
 ├── tools/render_diagrams.mjs          Mermaid → PNG
 ├── tools/sync_notion.py               Notion 사본 갱신 (페이지 매핑: tools/notion_pages.json)
 └── PRIVACY.md                         회사 정보 취급 원칙
@@ -64,5 +65,6 @@
 
 ## 읽는 법
 
+- 숫자의 정본은 [경력기술서 핵심 숫자 표](2-career-flow/경력기술서.md)다. 다른 문서는 요약이고, `tools/check_numbers.py`가 커밋 전에 불일치를 막는다.
 - **[실측]** 원자료가 있는 값 · **[동료 측정]** 내가 관리했지만 측정은 동료가 한 값 · **[검증 중]** 기준을 못 넘어 인용을 보류한 값
 - 이 레포에는 전 직장의 코드·문서·데이터·화면이 없다. 모든 글은 경험을 새로 서술한 것이다. → [PRIVACY.md](PRIVACY.md)

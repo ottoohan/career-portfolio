@@ -39,7 +39,7 @@
   "id": "415cb53e-a276-8140-8e01-df4a9da0d60c",
   "url": "https://app.notion.com/p/01-7-29-8-82-415cb53ea27681408e01df4a9da0d60c",
   "anchor": "415cb53e-a276-81e4-91cd-d87c1a56cb41",
-  "title": "사례 01. 사내 백오피스를 프로덕트로 운영하기 — 만족도 7.29 → 9.4"
+  "title": "사례 01. 사내 백오피스를 프로덕트로 운영하기 — 만족도 8.23 → 9.33"
  },
  "2-career-flow/cases/02-measuring-escape-rate.md": {
   "id": "415cb53e-a276-8187-9ce3-c8b63a3db328",
@@ -148,5 +148,23 @@
   "url": "https://app.notion.com/p/08-417cb53ea276815f88a8fe49f115623e",
   "anchor": "417cb53e-a276-8130-8455-d4c5ce8e40a8",
   "title": "08. 성능·부하 테스트"
+ },
+ "5-presentation/README.md": {
+  "id": "418cb53e-a276-814a-855d-d143df6119da",
+  "url": "https://app.notion.com/p/5-418cb53ea276814a855dd143df6119da",
+  "anchor": "418cb53e-a276-819b-b29a-d07372dc6aa8",
+  "title": "5. 발표 자료"
+ },
+ "2-career-flow/cases/10-rag-evaluation.md": {
+  "id": "418cb53e-a276-8146-b692-ed1e2392632f",
+  "url": "https://app.notion.com/p/10-AI-RAG-418cb53ea2768146b692ed1e2392632f",
+  "anchor": "418cb53e-a276-81c7-b45c-f3933852cfd8",
+  "title": "사례 10. AI 답변을 재 보니 문제는 찾기였다 — RAG 평가 실험"
+ },
+ "2-career-flow/cases/11-ontology-review.md": {
+  "id": "418cb53e-a276-8113-85ae-f77cc2b23d15",
+  "url": "https://app.notion.com/p/11-QA-418cb53ea276811385aef77cc2b23d15",
+  "anchor": "418cb53e-a276-817a-b298-eb4aac304c4e",
+  "title": "사례 11. 잴 수 없는 \"살 마음\"을 관계로 쪼개기 — 관심강의 온톨로지 QA 검토"
  }
 }
