@@ -4,6 +4,7 @@
 
 - 넘겨 보기: [portfolio-deck.html](portfolio-deck.html)을 내려받아 브라우저로 연다. ←/→ 또는 클릭으로 넘기고, `N`을 누르면 발표 대본이 보인다.
 - 아래는 같은 슬라이드의 이미지다.
+- 고치려면 [src/](src/)의 슬라이드 원본을 수정하고 `python3 tools/build_deck.py 5-presentation/src 5-presentation/portfolio-deck.html`로 다시 만든다.
 
 ## 흐름
 

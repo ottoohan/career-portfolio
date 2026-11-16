@@ -1,0 +1,23 @@
+<section id="rageval">
+<div class="head">
+<p class="eyebrow">RAG 평가 · 사내 RAG 연구 4부 발표</p>
+<h2 class="title">AI 답변을 재 보니, 문제는 답이 아니라 찾기였다</h2>
+</div>
+<div class="split" style="grid-template-columns:900px 1fr;gap:72px;">
+<div class="stack" style="gap:28px;">
+<p class="glabel">위키 문서 기반 질문 40개 중 합격 문항 (3회 실행 다수결)</p>
+<div class="hbars">
+<div class="hrow"><p class="hlabel">단어 검색</p><div class="htrack"><div class="hfill" style="width:55%;"></div></div><p class="hval">22</p></div>
+<div class="hrow"><p class="hlabel">바이그램 검색</p><div class="htrack"><div class="hfill" style="width:62.5%;"></div></div><p class="hval">25</p></div>
+<div class="hrow"><p class="hlabel">정답 문서 제공</p><div class="htrack"><div class="hfill best" style="width:90%;"></div></div><p class="hval">36</p></div>
+</div>
+<p class="sm">정답 문서를 주면 36/40. 검색 방식끼리는 차이가 작고(p=0.51), 검색과 정답 제공의 차이는 유의(p=0.001). 생성 모델과 채점 모델은 분리</p>
+</div>
+<div class="stack" style="gap:20px;">
+<div class="card compact"><h3 class="ctitle">한 번 실행으로 판정하지 않는다</h3><p class="ctext">같은 조건에서도 5~10% 문항의 판정이 갈려 3회 다수결로</p></div>
+<div class="card compact"><h3 class="ctitle">검색보다 문서가 먼저</h3><p class="ctext">실제 지원 채널 질문 중 위키에 답이 있는 건 21%. 시험용 질문의 찾기 점수 0.77이 실제 질문에선 0.53</p></div>
+<div class="card compact hl"><h3 class="ctitle">AI 채점자도 검증한다</h3><p class="ctext">사람 판정 25건과 일치 0.58 → 0.83(불합격 0.92). 기준 85% 미달이라 “검증 중”</p></div>
+</div>
+</div>
+<aside>개발본부 RAG 연구 스터디에서 4부 “RAG 평가”를 맡았고, 발표 전에 직접 실험했습니다. 사내 위키로 질문 40개짜리 시험지를 만들고, 검색 방식을 바꿔 가며 같은 질문을 세 번씩 돌렸습니다. 정답 문서를 직접 넣어 주면 40개 중 36개를 맞혔지만, 검색을 거치면 22~25개였습니다. 고칠 곳이 답을 만드는 모델이 아니라 찾는 쪽이라는 뜻입니다. 실제 지원 채널 질문으로 바꾸니 위키에 답이 있는 질문이 21%뿐이어서, 검색을 튜닝하기 전에 문서부터 채워야 한다고 결론 냈습니다. AI 채점자는 사람 판정과 맞춰 0.83까지 올렸지만, 같은 표본으로 다듬은 값이라 새 표본으로 다시 재기 전까지는 검증 중으로 둡니다. 청중이 개발·기획·QA가 섞인 12명이라 본편은 쉬운 말로 쓰고 깊은 내용은 별도 교재로 뺐습니다. 추천 점수 모델을 검토한 경험은 부록에 있습니다.</aside>
+</section>

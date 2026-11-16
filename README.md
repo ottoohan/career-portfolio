@@ -54,7 +54,7 @@
 │   └── cases/01~12                    문제 → 진단 → 조치 → 결과 → 원칙
 ├── 3-why-me/README.md
 ├── 4-qa-playbook/                    지금 쓰는 QA 템플릿 8종 + 그림(img/, 원본 img/src/*.mmd)
-├── 5-presentation/                   발표 자료: portfolio-deck.html + 슬라이드 이미지(img/)
+├── 5-presentation/                   발표 자료: portfolio-deck.html + 슬라이드 이미지(img/) + 원본(src/)
 ├── 이력서.md                          한 장 요약
 ├── tools/check_sanitize.py            커밋 전 회사 정보 검사
 ├── tools/check_numbers.py             대표 숫자가 문서마다 같은지 검사(정본: 경력기술서 핵심 숫자 표)

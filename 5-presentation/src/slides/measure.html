@@ -1,0 +1,16 @@
+<section id="measure">
+<div class="head">
+<p class="eyebrow">측정 → 수정 → 재측정</p>
+<h2 class="title">AI 사용도 로그로 재고, 고친 뒤 다시 잰다</h2>
+</div>
+<p class="lead">진단: 교정의 대부분이 기준 오해(“누적 말고 월별”), 즉석 조회 스크립트 한 달 400회 이상, 구현자 자기 검증. → “기준 먼저 출력” 규칙, 읽기 전용 조회 래퍼, 독립 검증을 완료 조건에 추가</p>
+<table class="tbl">
+<tr><th style="width:34%;">지표</th><th style="width:24%;">개선 전 · 150세션</th><th style="width:22%;">1주 후 · 56세션</th><th style="width:20%;">판정</th></tr>
+<tr><td>세션당 스킬 호출</td><td>0.11회</td><td>0.36회</td><td class="verdict-good">개선</td></tr>
+<tr><td>교정 비율</td><td>4.4%</td><td>3.1%</td><td class="verdict-good">개선 신호(표본 작음)</td></tr>
+<tr><td>세션당 권한 거부</td><td>0.11건</td><td>0.05건</td><td class="verdict-good">개선 신호(표본 작음)</td></tr>
+<tr><td>300분 초과 세션 비율</td><td>20%</td><td>27%</td><td class="verdict-bad">악화</td></tr>
+</table>
+<p class="source">기간: 개선 전 2026.10.01~11.03, 1주 후 11.04~11.11(세션 시작 시각 기준). 측정 스크립트의 오탐을 독립 검토로 찾아 고치고 이전 서술을 철회함</p>
+<aside>AI를 어떻게 쓰는지도 감으로 판단하지 않았습니다. 한 달치 세션 로그를 스크립트로 분석해서 교정이 어디서 생기는지 찾았고, 대부분이 기준을 잘못 이해한 경우라 첫 줄에 기준을 먼저 보여주는 규칙을 넣었습니다. 1주 뒤 같은 스크립트로 다시 쟀고, 좋아진 것과 나빠진 것을 같이 적었습니다. 긴 세션은 오히려 늘었습니다. 그리고 이 측정 스크립트 자체에 오탐이 있다는 걸 독립 검토에서 찾아서, 고치고 예전 주장을 철회했습니다.</aside>
+</section>
