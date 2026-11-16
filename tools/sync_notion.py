@@ -29,7 +29,7 @@ def cred(key):
 TREE = [
     ("README.md", None, "한지만 포트폴리오 — QA + 운영지원", "📌"),
     ("1-ai-workflow-guide/README.md", "README.md", "1. AI 에이전트 업무 환경 이식 가이드", "🧭"),
-    ("2-career-flow/README.md", "README.md", "2. 3년 성과 흐름", "📈"),
+    ("2-career-flow/README.md", "README.md", "2. 경력과 사례 — 사례 12건", "📈"),
     ("3-why-me/README.md", "README.md", "3. 내가 가져가는 것", "🎯"),
     ("PRIVACY.md", "README.md", "회사 정보 취급 원칙", "🔒"),
     ("2-career-flow/경력기술서.md", "2-career-flow/README.md", None, "📄"),
@@ -40,10 +40,10 @@ TREE = [
     for p in sorted((REPO / "2-career-flow/cases").glob("*.md"))
 ] + [
     # 플레이북 첫 페이지는 프로필 아래 'QA 템플릿 모음' 페이지를 그대로 쓴다(notion_pages.json에 미리 매핑)
-    ("4-qa-playbook/README.md", None, "QA 플레이북 — 지금 쓰는 템플릿", "🧰"),
+    ("4-qa-playbook/README.md", None, "QA·운영지원 플레이북 — 지금 쓰는 템플릿", "🧰"),
 ] + [
     (f"4-qa-playbook/{p.name}", "4-qa-playbook/README.md", None, "🧩")
-    for p in sorted((REPO / "4-qa-playbook").glob("0*.md"))
+    for p in sorted((REPO / "4-qa-playbook").glob("[0-9][0-9]-*.md"))
 ]
 
 
