@@ -31,6 +31,7 @@ TREE = [
     ("1-ai-workflow-guide/README.md", "README.md", "1. AI 에이전트 업무 환경 이식 가이드", "🧭"),
     ("2-career-flow/README.md", "README.md", "2. 경력과 사례 — 사례 12건", "📈"),
     ("3-why-me/README.md", "README.md", "3. 내가 가져가는 것", "🎯"),
+    ("3-why-me/ai-appendix.md", "3-why-me/README.md", "부록 — AI 업무 환경과 AI 결과물 평가", "🤖"),
     ("PRIVACY.md", "README.md", "회사 정보 취급 원칙", "🔒"),
     ("2-career-flow/경력기술서.md", "2-career-flow/README.md", None, "📄"),
     ("이력서.md", None, "이력서 — 한지만", "📄"),

@@ -7,9 +7,9 @@
 <div class="card compact"><p class="tag">규칙서</p><h3 class="ctitle">241줄</h3><p class="ctext">권장안 먼저 실행, 기준(기간·모수·단위)을 첫 줄에, 되돌릴 수 없는 작업은 금지</p></div>
 <div class="card compact"><p class="tag">메모리</p><h3 class="ctitle">교차 버그 패턴 10개</h3><p class="ctext">조용한 실패, 캐시, 시각 경계, “0건” 오판처럼 반복되는 함정을 다음 작업에 적용</p></div>
 <div class="card compact"><p class="tag">스킬 · 조회 래퍼</p><h3 class="ctitle">반복 업무 고정</h3><p class="ctext">문의 원인 판정, 운영 실수 집계, 읽기 전용 조회(키 비노출·쓰기 차단·최신성 표시)</p></div>
-<div class="card hl compact"><p class="tag">독립 검증 에이전트</p><h3 class="ctitle">13건 검증 · 머지 전 결함 2건</h3><p class="ctext">diff와 기대 결과만 받아 반례를 찾는다. 한 기능의 1차·재검증에서 배포 순서 위반·중복 판정을 찾음</p></div>
+<div class="card hl compact"><p class="tag">독립 검증 에이전트</p><h3 class="ctitle">13건 검증 · 머지 전 위험 2건</h3><p class="ctext">diff와 기대 결과만 받아 반례를 찾는다. 중복 판정 반례(1차 검증)와 배포 순서 위험(화면 400)을 머지 전에 찾음</p></div>
 <div class="card compact"><p class="tag">훅</p><h3 class="ctitle">입력 테스트 38개</h3><p class="ctext">main·force push처럼 복구할 수 없는 동작만 막는다. 우회 입력을 찾으면 테스트에 추가</p></div>
 <div class="card compact"><p class="tag">측정</p><h3 class="ctitle">세션 로그</h3><p class="ctext">교정·거부·스킬 호출을 같은 스크립트로 재고, 고친 뒤 다시 잰다</p></div>
 </div>
-<aside>마지막 해에는 AI 코딩 에이전트 위에 규칙과 검증, 측정 구조를 세웠습니다. 핵심은 독립 검증 에이전트입니다. 구현한 쪽이 됐다고 판단하지 않고, diff와 기대 결과만 받은 별도 에이전트가 반례를 찾게 했습니다. 11월 초 열흘 동안 변경 13건에 돌렸고, 한 기능의 1차 검증과 재검증에서 결함 2건을 머지 전에 찾았습니다. 이 구조는 회사 정보를 뺀 템플릿으로 공개 레포에 올려 두었습니다.</aside>
+<aside>마지막 해에는 AI 코딩 에이전트 위에 규칙과 검증, 측정 구조를 세웠습니다. 핵심은 독립 검증 에이전트입니다. 구현한 쪽이 됐다고 판단하지 않고, diff와 기대 결과만 받은 별도 에이전트가 반례를 찾게 했습니다. 11월 초 열흘 동안 변경 13건에 돌렸고, 중복 판정 반례 하나와 배포 순서를 잘못 잡으면 운영 화면이 깨지는 위험 하나를 머지 전에 찾았습니다. 이 구조는 회사 정보를 뺀 템플릿으로 공개 레포에 올려 두었습니다.</aside>
 </section>
