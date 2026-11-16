@@ -51,16 +51,20 @@ def call(method, path, payload=None):
     data = json.dumps(payload).encode() if payload is not None else None
     req = urllib.request.Request(API + path, data=data, method=method, headers={
         "Authorization": "Bearer " + cred("api_key"), "Notion-Version": "2022-06-28", "Content-Type": "application/json"})
-    for attempt in range(4):  # 응답 없이 걸리거나 429·5xx면 잠깐 쉬고 다시
+    for attempt in range(7):  # 응답 없이 걸리거나 429·5xx·네트워크 끊김이면 쉬었다가 다시(최대 약 2분)
         try:
             return json.load(urllib.request.urlopen(req, timeout=60))
         except urllib.error.HTTPError as e:
-            if e.code in (429, 500, 502, 503, 504) and attempt < 3:
-                time.sleep(2 ** attempt * 2); continue
-            raise SystemExit(f"API 실패 {e.code} {path}: {e.read().decode()[:500]}")
-        except (TimeoutError, urllib.error.URLError, OSError) as e:  # OSError: 짧은 시간 연결이 몰리면 Errno 49
-            if attempt < 3:
-                time.sleep(2 ** attempt * 2); continue
+            body = e.read().decode()[:500]
+            # 이전 실행이 지우다 멈춘 블록: 이미 보관됐으면 지운 것으로 본다
+            if method == "DELETE" and e.code == 400 and "archived" in body:
+                return {}
+            if e.code in (429, 500, 502, 503, 504) and attempt < 6:
+                time.sleep(min(2 ** attempt * 2, 30)); continue
+            raise SystemExit(f"API 실패 {e.code} {path}: {body}")
+        except (TimeoutError, urllib.error.URLError, OSError) as e:  # OSError: 연결 몰림(Errno 49)·DNS 끊김(Errno 8)
+            if attempt < 6:
+                time.sleep(min(2 ** attempt * 2, 30)); continue
             raise SystemExit(f"API 응답 없음 {path}: {e}")
 
 
@@ -226,16 +230,15 @@ def dry():
 
 
 def clear(info):
-    """콜아웃과 하위 페이지만 남기고 지운다."""
-    cur, n = None, 0
+    """콜아웃과 하위 페이지만 남기고 지운다. 지우면서 커서로 넘기면 목록이 밀리므로, 지울 게 없을 때까지 처음부터 다시 본다."""
+    n = 0
     while True:
-        r = call("GET", f"/blocks/{info['id']}/children?page_size=100" + (f"&start_cursor={cur}" if cur else ""))
-        for b in r["results"]:
-            if b["id"] != info["anchor"] and b["type"] != "child_page":
-                call("DELETE", f"/blocks/{b['id']}"); n += 1
-        if not r["has_more"]:
+        kids = call("GET", f"/blocks/{info['id']}/children?page_size=100")["results"]
+        targets = [b for b in kids if b["id"] != info["anchor"] and b["type"] != "child_page"]
+        if not targets:
             return n
-        cur = r["next_cursor"]
+        for b in targets:
+            call("DELETE", f"/blocks/{b['id']}"); n += 1
 
 
 def main():
