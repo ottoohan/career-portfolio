@@ -6,7 +6,7 @@
 
 | 운영 실수로 인한 지원 요청 | 결제 전수 TC | 프로덕션 직접 커밋 | 지원 문의 첫 답변 | AI 하네스 |
 |---|---|---|---|---|
-| **13.9% → 9.7%** (2025.12 한 달 → 2026.05~10 합산) · 지원 요청 건수도 전년 대비 −35.6% | **290건** · 과거 결함 101건 역매핑 | **328건** · 6개 레포 | **14분 → 9분** · 첫 실질 답변 중앙값 (2025.12 → 2026.10~11) | 독립 검증 에이전트로 변경 13건 검증 · 머지 전 차단 2건 |
+| **13.9% → 9.7%** (2025.12 한 달 → 2026.05~10 합산, 8월 미측정) · 채널 전체 요청 건수도 전년 대비 −35.6% | **290건** · 과거 결함 101건 역매핑 | **328건** · 6개 레포 | **14분 → 9분** · 채널 전체 첫 실질 답변 중앙값 (2025.12 → 2026.10~11) | 독립 검증 에이전트로 변경 13건 검증 · 머지 전 결함 발견 2건(같은 기능의 1차·재검증) |
 
 ## 한 번에 보는 흐름 — 발표와 같은 6단
 
@@ -16,7 +16,7 @@
 | 2 | 운영 도구와 품질을 숫자로 관리했다 | [운영지원 결과](2-career-flow/README.md#운영지원--결과로-본-변화) · [사례 01 백오피스 개선](2-career-flow/cases/01-backoffice-as-product.md) · [사례 02 크리티컬 유출률 — 재측정으로 내 계산 정정](2-career-flow/cases/02-measuring-escape-rate.md) |
 | 3 | 원인을 끝까지 찾는다 — 운영 문의 판정(12), 직접 수정 1건(04), 원인 재현·수정안 인계 3건(03·05·06), 사고를 TC 기준으로(07), 티켓 규칙(09) | [사례 12](2-career-flow/cases/12-ops-inquiry-triage.md) · [03](2-career-flow/cases/03-event-loss-before-navigation.md) · [04](2-career-flow/cases/04-search-zero-results.md) · [05](2-career-flow/cases/05-silent-2000-cap.md) · [07](2-career-flow/cases/07-fallback-masked-as-success.md) · [09](2-career-flow/cases/09-ticket-writing-principle.md) |
 | 4 | AI를 규칙·검증·측정이 있는 업무 시스템으로 돌린다 | [사례 08](2-career-flow/cases/08-ai-agent-qa-workflow.md) · [이식 가이드](1-ai-workflow-guide/README.md) |
-| 5 | AI가 만든 결과가 맞는지 잰다 | [사례 10 RAG 평가](2-career-flow/cases/10-rag-evaluation.md) · [사례 11 온톨로지 검토](2-career-flow/cases/11-ontology-review.md) · [내가 가져가는 것 5절](3-why-me/README.md#5-ai-결과물을-재는-법) |
+| 5 | AI가 만든 결과가 맞는지 잰다 | [사례 10 RAG 평가](2-career-flow/cases/10-rag-evaluation.md) · [사례 11 온톨로지 검토(발표에선 부록)](2-career-flow/cases/11-ontology-review.md) · [내가 가져가는 것 5절](3-why-me/README.md#5-ai-결과물을-재는-법) |
 | 6 | 숫자를 다루는 원칙과 합류 후 90일 | [내가 가져가는 것](3-why-me/README.md) |
 
 발표 자료로 보려면 → [5. 발표 자료](5-presentation/README.md) (본편 15장 + 부록 1장, 장마다 근거 문서 연결)

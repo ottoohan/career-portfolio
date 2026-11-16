@@ -12,7 +12,7 @@
 |---|---|---|
 | 1 누구이고 5년 동안 무엇을 했나 | 1~3 | [이력서](../이력서.md) · [경력기술서](../2-career-flow/경력기술서.md) |
 | 2 운영 도구와 품질을 숫자로 | 4~5 | [사례 01](../2-career-flow/cases/01-backoffice-as-product.md) · [사례 02](../2-career-flow/cases/02-measuring-escape-rate.md) |
-| 3 원인을 찾아 고치고 운영 문의를 닫는다 | 6~8 | [사례 03](../2-career-flow/cases/03-event-loss-before-navigation.md) · [04](../2-career-flow/cases/04-search-zero-results.md) · [05](../2-career-flow/cases/05-silent-2000-cap.md) · [07](../2-career-flow/cases/07-fallback-masked-as-success.md) · [09](../2-career-flow/cases/09-ticket-writing-principle.md) |
+| 3 원인을 찾아 고치고 운영 문의를 닫는다 | 6~8 | [사례 12](../2-career-flow/cases/12-ops-inquiry-triage.md) · [03](../2-career-flow/cases/03-event-loss-before-navigation.md) · [04](../2-career-flow/cases/04-search-zero-results.md) · [05](../2-career-flow/cases/05-silent-2000-cap.md) · [07](../2-career-flow/cases/07-fallback-masked-as-success.md) · [09](../2-career-flow/cases/09-ticket-writing-principle.md) |
 | 4 AI를 업무 시스템으로 | 9~10 | [사례 08](../2-career-flow/cases/08-ai-agent-qa-workflow.md) · [이식 가이드](../1-ai-workflow-guide/README.md) |
 | 5 AI가 만든 결과가 맞는지 잰다 | 11~12 | [내가 가져가는 것 5절](../3-why-me/README.md#5-ai-결과물을-재는-법) · [사례 10](../2-career-flow/cases/10-rag-evaluation.md) |
 | 6 숫자를 다루는 원칙과 합류 후 90일 | 13~15 | [내가 가져가는 것](../3-why-me/README.md) |
