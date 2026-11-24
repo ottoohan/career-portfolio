@@ -27,6 +27,6 @@
 |---|---|---|---|
 | 03 | [페이지 이동 직전 분석 이벤트 유실](cases/03-event-loss-before-navigation.md) | FE·데이터 | 재발 원인 재현 · 2차 수정 기준 인계 |
 | 05 | [2,000건에서 조용히 잘리는 일괄 변경](cases/05-silent-2000-cap.md) | FE·BE·QA | 원인·보정안·근본 수정안 인계 |
-| 06 | [알림 금액과 결제 금액이 다르다 — 재발한 이유](cases/06-price-snapshot-recurrence.md) | 기획·QA | 정책 결정 요청 인계 |
+| 06 | [알림 금액과 결제 금액이 다르다 — 재발한 이유](cases/06-price-snapshot-recurrence.md) | 기획·QA | 결정안(A/B) 정리, 결제 영역이라 협의 후 A안 반영 |
 | 11 | ["살 마음"을 관계로 쪼개기 — 온톨로지 QA 검토](cases/11-ontology-review.md) | 데이터·QA | 누수 세그먼트 인용 보류 · 예측 구간화 의견 |
 | 10 | [AI 답변을 재 보니 문제는 찾기였다 — RAG 평가](cases/10-rag-evaluation.md) | AI 평가·QA | 병목=찾기 실측(22~25 vs 36/40)·발표 · 문서 개선은 인계, 채점자 일치율은 "검증 중" |
